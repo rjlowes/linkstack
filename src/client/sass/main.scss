@@ -1,0 +1,32 @@
+@import "abstract/variables";
+@import "abstract/mixins/breakpoints";
+@import "abstract/mixins/typography";
+
+@import "base/reset";
+@import "base/buttons";
+@import "base/forms";
+@import "base/typography";
+@import "base/grid";
+
+@import "components/action-bar";
+@import "components/bookmark";
+@import "components/grid-bookmarks";
+@import "components/header";
+
+@import "templates/folders";
+@import "templates/folder-detail";
+
+body {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+body {
+    // background-color: #131313;
+    color: #fff;
+    // background-color: rgba(8, 8, 8, .85);
+    // background-image: linear-gradient(rgb(57, 56, 58), rgb(8, 8, 8) 85%);
+    // background-repeat: no-repeat;
+    background-color: #161616;
+
+}

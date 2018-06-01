@@ -1,0 +1,77 @@
+.bookmark {
+    // background: #fbfbfb;
+    // border-radius: 0 0 5px 5px;
+    // margin: 1px;
+    // img {
+    //     width: 100%;
+    // }
+
+    // margin-left: 90px;
+
+    // &:before {
+    //     background-color: #ed002d;
+    //     content: '';
+    //     display: block;
+    //     // position: absolute;
+    //     height: 60px;
+    //     margin-right: 30px;
+    //     width: 60px;
+    // }
+
+    display: flex;
+
+    // although flex might be better!
+    position: relative;
+}
+
+@mixin text-underflow {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.bookmark__figure {
+    background-color: #ed002d;
+    height: 60px;
+    margin-right: 30px;
+    width: 60px;
+
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    display: none;
+    flex-direction: column;
+}
+
+.bookmark__title {
+    // @extend %typography-body;
+    // @include typography($typography-body-bold);
+    // @include text-underflow;
+    text-transform: lowercase;
+}
+
+.bookmark__desc {
+    color: #7f7f7f;
+    font-size: 11px;
+}
+
+.bookmark__img {
+    // border-radius: 5px 5px 0 0;
+}
+
+.bookmark__footer {
+    // padding: 12px;
+}
+
+.bookmark__meta {
+    @include typography($typography-body-small);
+    @include text-underflow;
+}
+
+.bookmark__settings-button {
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

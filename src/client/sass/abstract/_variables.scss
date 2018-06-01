@@ -1,0 +1,113 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+$baseline: 6px;
+$font-base: 10px;
+
+// Typography
+// -------------------------------------------
+$font-colour-default: #fff;
+
+$font-family-heading:           "raleway-bold";
+$font-family-regular:           "roboto-regular";
+$font-family-body:              "roboto-regular"; // TODO remove
+$font-family-body-bold:         'roboto-bold';
+$font-family-bold:              'roboto-bold';
+
+$font-faces: $font-family-heading $font-family-body;
+
+$typography-heading1: (
+    color: $font-colour-default,
+    font-family: $font-family-heading,
+    font: (
+        null: (size: 42px, line-height: 48px),
+        md: (size: 42px, line-height: 48px)
+    )
+);
+
+$typography-heading2: (
+    color: $font-colour-default,
+    font-family: $font-family-heading,
+    letter-spacing: -1px,
+    font: (
+        null: (size: 24px, line-height: 24px),
+        md: (size: 24px, line-height: 24px)
+    )
+);
+
+$typography-heading3: (
+    color: $font-colour-default,
+    font-family: $font-family-heading,
+    font-weight: 400,
+    font: (
+        null: (size: 18px, line-height: 24px)
+    )
+);
+
+$typography-heading4: (
+    color: $font-colour-default,
+    font-family: $font-family-heading,
+    text-transform: uppercase,
+    font: (
+        null: (size: 12px, line-height: 24px)
+    )
+);
+
+$typography-body: (
+    color: $font-colour-default,
+    font-family: $font-family-regular,
+    text-transform: null,
+    font: (
+        null: (size: 14px, line-height: 18px)
+    )
+);
+
+$typography-body-bold: (
+    color: $font-colour-default,
+    font-family: $font-family-bold,
+    text-transform: null,
+    font: (
+        null: (size: 14px, line-height: 18px)
+    )
+);
+
+$typography-body-small: (
+    color: $font-colour-default,
+    font-family: $font-family-regular,
+    text-transform: null,
+    font: (
+        null: (size: 12px, line-height: 18px)
+    )
+);
+
+
+$font-sizes: (
+    heading1: (
+        null: (size: 24px, line-height: 36px),
+        md: (size: 30px, line-height: 36px)
+    ),
+    heading2: (
+        null: (size: 20px, line-height: 24px)
+    ),
+    font: (
+        null: (size: 14px, line-height: 18px)
+    )
+);
+
+// Spacing
+$spacing1: $baseline;
+$spacing1: 2 * $baseline;
+$spacing2: 3 * $baseline;
+$spacing3: 4 * $baseline;
+$spacing4: 5 * $baseline;
+$spacing5: 6 * $baseline;
+$spacing6: 7 * $baseline;
+$spacing7: 8 * $baseline;
+$spacing8: 9 * $baseline;
+$spacing9: 10 * $baseline;

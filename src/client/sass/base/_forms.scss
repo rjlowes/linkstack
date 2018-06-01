@@ -1,0 +1,23 @@
+.form-input {
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+
+    &--jumbo {
+        border: none;
+        color: #fff;
+        outline: none;
+        font-size: 40px;
+        background: none;
+        height: 76px;
+        line-height: 76px;
+    }
+}
+
+.search-form {
+    margin-bottom: 12px;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    width: 100%;
+    padding: 24px;
+}

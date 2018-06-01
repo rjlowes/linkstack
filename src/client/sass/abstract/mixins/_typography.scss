@@ -1,0 +1,85 @@
+// Font fontface
+@mixin font-face($font-face) {
+    @font-face {
+        font-family: $font-face;
+        src: url('../fonts/#{$font-face}.woff2') format('woff2'),
+             url('../fonts/#{$font-face}.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@mixin font-faces($font-faces: $font-faces) {
+    @each $font-face in $font-faces {
+        @include font-face($font-face);
+    }
+}
+
+// Typography system
+//
+// -----------------------------
+
+@mixin typography-font($font-map) {
+    @each $breakpoint, $bp-map in $font-map {
+        $font-size: map-get($bp-map, size);
+        $line-height: map-get($bp-map, line-height);
+
+        @if $breakpoint == null {
+            @include font-size-line-height($font-size, $line-height);
+        }
+        @else {
+            @if map-get($grid-breakpoints, $breakpoint) != null {
+                    @include breakpoint-up($breakpoint) {
+                    @include font-size-line-height($font-size, $line-height);
+                }
+            }
+            @else {
+                @warn "No breakpoint found for #{$breakpoint}";
+            }
+
+        }
+    }
+}
+
+@mixin typography-rules($map) {
+    $typography-blacklist: line-height font;
+
+    @each $key, $value in $map {
+        @if index($typography-blacklist, $key) == null {
+            #{$key}: #{$value};
+        }
+    }
+}
+
+@mixin typography($map: ()) {
+    @include typography-rules($map);
+    @include typography-font(map-get($map, 'font'));
+}
+
+// Calculate rem from pixel size
+// -----------------------------
+@function calculateRem($size) {
+    $remSize: $size / $font-base;
+    @return $remSize;
+}
+
+// rem font-size and unitless line-height
+// -----------------------------
+@mixin font-size-line-height($font-size, $line-height) {
+    $rem-font-size: calculateRem($font-size);
+    $line-height-unitless: strip-unit($line-height) / strip-unit($font-size);
+
+    font-size: $font-size;
+    font-size: #{$rem-font-size}rem;
+    line-height: $line-height-unitless;
+}
+
+// Strip unit
+// -----------------------------
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

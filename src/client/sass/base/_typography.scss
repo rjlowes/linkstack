@@ -1,0 +1,79 @@
+@include font-faces;
+
+%typography-heading1 {
+    @include typography($typography-heading1);
+}
+
+%typography-heading2 {
+    @include typography($typography-heading2);
+}
+
+%typography-heading3 {
+    @include typography($typography-heading3);
+}
+
+%typography-heading4 {
+    @include typography($typography-heading4);
+}
+
+%typography-body {
+    @include typography($typography-body);
+}
+
+%typography-body-bold {
+    @include typography($typography-body-bold);
+}
+
+%typography-body-small {
+    @include typography($typography-body-small);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @extend %typography-body;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, .h1 {
+    @extend %typography-heading1;
+    margin-bottom: $baseline;
+}
+
+h2, .h2 {
+    @extend %typography-heading2;
+    margin-bottom: $baseline;
+}
+
+h3, .h3 {
+    @extend %typography-heading3;
+    margin-bottom: $baseline;
+}
+
+h4, .h4 {
+    @extend %typography-heading4;
+    margin-bottom: $baseline;
+}
+
+p, .p {
+    @extend %typography-body;
+    margin-bottom: $baseline;
+}
+
+a {
+    color: inherit;
+}
+
+label {
+    @extend %typography-heading4;
+}
+
+legend {
+
+}
+
+li {
+    @extend %typography-body;
+}

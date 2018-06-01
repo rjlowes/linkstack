@@ -1,0 +1,11 @@
+.t-folders {
+    @include container;
+}
+
+.t-folders__action-bar {
+    @include container;
+}
+
+.t-folders__main {
+    @include container;
+}

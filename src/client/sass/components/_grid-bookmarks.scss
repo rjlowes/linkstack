@@ -1,0 +1,18 @@
+
+
+.grid-bookmarks {
+    // display: grid;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    // grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-bookmarks__item {
+    box-sizing: border-box;
+    // max-width: 250px;
+    max-width: 33.3%;
+    // max-width: 360px;
+    // padding:12px;
+}

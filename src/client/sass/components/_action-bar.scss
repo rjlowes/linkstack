@@ -1,0 +1,16 @@
+.action-bar {
+    align-items: center;
+    display: flex;
+}
+
+.action-bar__icon {
+    margin-right: $baseline;
+}
+
+.action-bar__title {
+    @extend %typography-heading3;
+}
+
+.action-bar__main {
+    margin-left: $baseline;
+}
